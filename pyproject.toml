@@ -10,7 +10,7 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-  "aioteleco",
+  "aioteleco==0.2.0",
   "mypy>=1.18",
   "pytest-homeassistant-custom-component==0.13.366",
   "ruff>=0.13",
@@ -18,10 +18,6 @@ dev = [
 
 [tool.uv]
 package = false
-
-[tool.uv.sources]
-# Until aioteleco 0.2.0 (Cover.direction / restore_position) is on PyPI.
-aioteleco = { git = "https://github.com/trois-six/aioteleco", rev = "d63cba8" }
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

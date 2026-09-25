@@ -189,10 +189,14 @@ wheels = [
 
 [[package]]
 name = "aioteleco"
-version = "0.1.0"
-source = { git = "https://github.com/trois-six/aioteleco?rev=d63cba8#d63cba8bc93dad408b7394337b2eba6796fb1583" }
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/29/62/a7bdd6a96d60f67b8a45b920749e5ee141f4158481efa1d5d66b4111b319/aioteleco-0.2.0.tar.gz", hash = "sha256:34cf81def67d1dd563e39d89bbcce817973f9d383c656146644ad01c3ba01b79", size = 60181, upload-time = "2026-09-25T05:20:11.398Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/b0/19a2792fb8230402d9f021a9c9df10f5511560e6a7c27d56ba8e11862470/aioteleco-0.2.0-py3-none-any.whl", hash = "sha256:21c8600005dc169efc3163a6ccaf70ef538cb0fc71d63eaadea9e133d9c55c48", size = 46517, upload-time = "2026-09-25T05:20:09.905Z" },
 ]
 
 [[package]]
@@ -1154,7 +1158,7 @@ dev = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "aioteleco", git = "https://github.com/trois-six/aioteleco?rev=d63cba8" },
+    { name = "aioteleco", specifier = "==0.2.0" },
     { name = "mypy", specifier = ">=1.18" },
     { name = "pytest-homeassistant-custom-component", specifier = "==0.13.366" },
     { name = "ruff", specifier = ">=0.13" },
