@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Compte Teleco Automation",
+        "description": "Connectez-vous avec le compte de votre application de marque (Daisy Teleco, Biossun, Brustor, Durmi, Gibus, Hardtop, Kettal, Pratic, Wise).",
+        "data": {
+          "email": "E-mail",
+          "password": "Mot de passe"
+        }
+      },
+      "installation": {
+        "title": "Installation",
+        "description": "Ce compte a plusieurs installations (box). Choisissez celle à ajouter ; ajoutez de nouveau l'intégration pour les autres.",
+        "data": {
+          "installation": "Installation"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Authentification expirée",
+        "description": "Saisissez de nouveau le mot de passe de {email}.",
+        "data": {
+          "password": "Mot de passe"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Authentification invalide",
+      "cannot_connect": "Échec de connexion",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "L'appareil est déjà configuré",
+      "reauth_successful": "La ré-authentification a réussi",
+      "no_installations": "Ce compte n'a aucune installation."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "menu_options": {
+          "settings": "Connexion et interrogation",
+          "travel": "Durées de course des volets"
+        }
+      },
+      "settings": {
+        "title": "Connexion et interrogation",
+        "data": {
+          "transport": "Commandes",
+          "local_host": "Adresse IP de la box",
+          "scan_interval": "Intervalle d'interrogation"
+        },
+        "data_description": {
+          "transport": "Auto envoie les commandes à la box sur le réseau local, avec repli sur le cloud.",
+          "local_host": "Laissez vide pour utiliser l'adresse que la box communique au cloud.",
+          "scan_interval": "Fréquence de lecture de l'état dans le cloud."
+        }
+      },
+      "travel": {
+        "title": "Durées de course des volets",
+        "description": "Les volets ne savent qu'ouvrir, s'arrêter et fermer. Avec la durée d'une ouverture et d'une fermeture complètes, Home Assistant peut aussi régler une position en chronométrant le mouvement. Mesurez-les au chronomètre ou avec `teleco cover calibrate`. Mettez 0 pour les supprimer.",
+        "data": {
+          "device": "Volet",
+          "open_time": "Durée d'ouverture complète",
+          "close_time": "Durée de fermeture complète"
+        }
+      }
+    },
+    "abort": {
+      "not_loaded": "L'intégration doit être chargée pour lister ses volets.",
+      "no_covers": "Cette installation n'a aucun volet pouvant utiliser des durées de course."
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "auto": "Local, cloud en secours",
+        "local": "Local uniquement",
+        "cloud": "Cloud uniquement"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Connexion au cloud"
+      }
+    },
+    "select": {
+      "heater_power": {
+        "name": "Puissance",
+        "state": {
+          "off": "Arrêt",
+          "1": "Palier 1",
+          "2": "Palier 2",
+          "3": "Palier 3",
+          "4": "Palier 4"
+        }
+      }
+    },
+    "sensor": {
+      "signal": {
+        "name": "Signal Wi-Fi"
+      }
+    }
+  }
+}

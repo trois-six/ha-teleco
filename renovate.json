@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    ":semanticCommits"
+  ],
+  "dependencyDashboard": true,
+  "prConcurrentLimit": 10,
+  "enabledManagers": [
+    "github-actions",
+    "pep621",
+    "homeassistant-manifest"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "automergeType": "branch"
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Dev tooling (uv.lock); HA test plugin pins Home Assistant itself.",
+      "matchManagers": ["pep621"],
+      "groupName": "python dev dependencies",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "The SDK the integration runs on: keep manifest.json and the dev pin together, open a PR.",
+      "matchPackageNames": ["aioteleco"],
+      "groupName": "aioteleco",
+      "semanticCommitType": "fix",
+      "semanticCommitScope": "deps",
+      "automerge": false
+    }
+  ]
+}

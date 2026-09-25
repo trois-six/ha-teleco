@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Teleco Automation account",
+        "description": "Log in with the account of your brand app (Daisy Teleco, Biossun, Brustor, Durmi, Gibus, Hardtop, Kettal, Pratic, Wise).",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "installation": {
+        "title": "Installation",
+        "description": "This account has several installations (boxes). Pick the one to add; add the integration again for the others.",
+        "data": {
+          "installation": "Installation"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Authentication expired",
+        "description": "Enter the password of {email} again.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication",
+      "cannot_connect": "Failed to connect",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Device is already configured",
+      "reauth_successful": "Re-authentication was successful",
+      "no_installations": "This account has no installation."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "menu_options": {
+          "settings": "Connection and polling",
+          "travel": "Cover travel times"
+        }
+      },
+      "settings": {
+        "title": "Connection and polling",
+        "data": {
+          "transport": "Commands",
+          "local_host": "Box IP address",
+          "scan_interval": "Polling interval"
+        },
+        "data_description": {
+          "transport": "Auto sends commands to the box on the local network and falls back to the cloud.",
+          "local_host": "Leave empty to use the address the box reports to the cloud.",
+          "scan_interval": "How often the state is read from the cloud."
+        }
+      },
+      "travel": {
+        "title": "Cover travel times",
+        "description": "Covers only open, stop and close. With the time a full opening and a full closing take, Home Assistant can also set a position by timing the move. Measure them with a stopwatch or `teleco cover calibrate`. Set 0 to remove them.",
+        "data": {
+          "device": "Cover",
+          "open_time": "Full opening time",
+          "close_time": "Full closing time"
+        }
+      }
+    },
+    "abort": {
+      "not_loaded": "The integration must be loaded to list its covers.",
+      "no_covers": "This installation has no cover that could use travel times."
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "auto": "Local, cloud as fallback",
+        "local": "Local only",
+        "cloud": "Cloud only"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "online": {
+        "name": "Cloud connection"
+      }
+    },
+    "select": {
+      "heater_power": {
+        "name": "Power",
+        "state": {
+          "off": "Off",
+          "1": "Step 1",
+          "2": "Step 2",
+          "3": "Step 3",
+          "4": "Step 4"
+        }
+      }
+    },
+    "sensor": {
+      "signal": {
+        "name": "Wi-Fi signal"
+      }
+    }
+  }
+}
